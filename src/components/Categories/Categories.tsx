@@ -16,9 +16,7 @@ const DUMMY_CATEGORIES = [
 
 
 
-function Categories(props: any){
-
-    
+function Categories(){
 
     let id = 0;
     return (<>

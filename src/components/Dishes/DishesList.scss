@@ -1,7 +1,13 @@
-.discheslist{
+.disheslist{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+
+    &__list{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-content: center;
     justify-content: space-evenly;
+    }
 }

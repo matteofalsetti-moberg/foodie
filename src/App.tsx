@@ -7,7 +7,8 @@ import DishesList from './components/Dishes/DishesList';
 
 
 function App() {
-  const [isFood, setIsFood] = useState(true)
+  const [isFood, setIsFood] = useState(true);
+  //const [categorySelected, setCategorySelected] = useState('none');
 
 
   return (
