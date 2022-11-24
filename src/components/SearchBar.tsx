@@ -1,6 +1,6 @@
 function SearchBar(){
     return (
-        <input />
+        <input className="header__input" />
     )
 }
 

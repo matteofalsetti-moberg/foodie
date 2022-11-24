@@ -1,18 +1,20 @@
-import React from 'react';
-import './App.css';
-import Categories from './components/Categories';
+import React, {useState} from 'react';
+import Categories from './components/Categories/Categories';
 import Header from './components/Header';
+import DishesList from './components/Dishes/DishesList';
 
 
 
 
 function App() {
+  const [isFood, setIsFood] = useState(true)
 
 
   return (
     <div className="App">
       <Header />
       <Categories />
+      {isFood && <DishesList></DishesList>}
     </div>
   );
 }

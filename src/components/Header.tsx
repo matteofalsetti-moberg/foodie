@@ -1,14 +1,14 @@
 import React from "react";
 import SearchBar from "./SearchBar";
-import "./Header.css";
+import "./Header.scss";
 
 function Header (){
     return (
-        <div className="Header">
-            <button>MENU</button>
+        <div className="header">
+            <button className="header__button">MENU</button>
             <SearchBar />
-            <button>Login</button>
-            <button>Cart</button>
+            <button className="header__button" >Login</button>
+            <button className="header__button" >Cart</button>
         </div>
     )
 }
