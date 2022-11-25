@@ -11,7 +11,7 @@ function DishesList(){
         <h1 className="disheslist__title">Dishes</h1>
         <div className="disheslist__list" >
         {DUMMY_Dishes.map(item => {
-                return (<Card >
+                return (<Card key={id++}>
                     <Dish  key={id++} name={item.name} />
                     </Card>
                 )

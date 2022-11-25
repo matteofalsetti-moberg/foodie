@@ -1,6 +1,11 @@
-function Dish(props:any){
+type DishType = {
+    name: string,
+    key: number
+}
+
+function Dish(props:DishType){
     return (
-        <p>{props.name}</p>
+        <p key={props.key} >{props.name}</p>
     )
 }
 
