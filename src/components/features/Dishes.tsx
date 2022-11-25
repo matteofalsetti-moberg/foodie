@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-const initialDishesState = {category: "none"};
+const initialDishesState = {dishes: "none"};
 
 
 export const dishesSlice = createSlice({
