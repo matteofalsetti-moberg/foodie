@@ -10,12 +10,12 @@ function CategoryItem(props:CategoryItemProp){
     const dispatch = useAppDispatch();
 
     function sendCategories(){
-        dispatch(setCategories(props.name))
+        dispatch(setCategories({category: props.name,display: true}))
     }
 
-    return (<div onClick={sendCategories}>
+    return (<div className="categories__card" onClick={sendCategories}>
         <img className="categories__image" src={props.image} alt="Image not found" />
-        <p className="categories__name">{props.name}</p>
+        <p>{props.name}</p>
         </div>
     )
 }
