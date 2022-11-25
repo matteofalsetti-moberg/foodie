@@ -21,18 +21,17 @@ let CATEGORIES = [  //after we can fetch the categories
 function Categories(){
     const [categories, setCategories] = useState([{name: "Burgers", image: burger}]);
 
-    async function fetchSomeData(){
+    async function fetchCategories(){
         const response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
         const data = await response.json();
       
-      const fetchedCateories =await  data.categories.map(
+      const fetchedCategories =await  data.categories.map(
         (item: { strCategory: string; strCategoryThumb: string; }) => ({name: item.strCategory,image: item.strCategoryThumb}));
-        setCategories(fetchedCateories);
+        setCategories(fetchedCategories);
       }
       
       useEffect(()=>{
-        fetchSomeData();
-        console.log(categories)
+        fetchCategories();
       }, [])
 
     let id=0;
