@@ -9,7 +9,8 @@ export interface IButtonPorps{
  function Button(props: IButtonPorps){
     return (
             <button className="button">
-        {props.icon ? <img className="button__image" src={props.icon}/> : <div>{props.text}</div>}
+        {props.icon && <img className="button__image" src={props.icon}/>}
+        {props.text && <div>{props.text}</div>}
     </button>)
 };
 
