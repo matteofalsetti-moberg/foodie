@@ -1,15 +1,16 @@
 
+import "./button.scss"
+
 export interface IButtonPorps{
-    icon: string,
-    className: string
+    icon?: string,
+    text?: string,
 }
 
  function Button(props: IButtonPorps){
-    return (<>
-            <button className={props.className} >
-        <i className={props.icon} />
-    </button>
-    </>)
+    return (
+            <button className="button">
+        {props.icon ? <img className="button__image" src={props.icon}/> : <div>{props.text}</div>}
+    </button>)
 };
 
 export default Button;

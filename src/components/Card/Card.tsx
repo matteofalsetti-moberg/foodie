@@ -9,7 +9,7 @@ export interface ICardProps{
 
 function Card(props: ICardProps){
 
-    return(<div  key={props.key || 0} className="card" >{props.children}</div>)
+    return(<div  key={props.key} className="card" >{props.children}</div>)
 }
 
 export default Card;

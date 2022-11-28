@@ -1,16 +1,18 @@
-import React from "react";
+import Button from "../Button/Button";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.scss";
-import cart from "../assets/cart.png"
-import Button from "../Button/Button";
+import munuIcon from "../../assets/menuIcon.png"
+import loginIcon from "../../assets/loginIcon.png";
+import cartIcon from "../../assets/cart.png"
+
 
 function Header (){
     return (
         <div className="header">
-            <button className="header__button" >MENU</button>
+            <Button  icon={munuIcon} />
             <SearchBar />
-            <button className="header__button" >Login</button>
-            <button className="header__button" >Cart</button>
+            <Button  icon={loginIcon} />
+            <Button  icon={cartIcon} />
         </div>
     )
 }

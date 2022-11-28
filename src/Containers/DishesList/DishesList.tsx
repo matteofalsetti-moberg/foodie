@@ -18,7 +18,6 @@ export interface IDishesListProp{
 
 function DishesList(props: IDishesListProp){
     const currentCategory = useSelector((state: RootState) => state.categories.value);
-    //let dishes: [{ name: string; image: string; }]= [{ name: "", image: ""}];
     const [dishes, setDishes] = useState([{ name: "", image: ""}]);
 
     
@@ -30,7 +29,6 @@ function DishesList(props: IDishesListProp){
               
              const fetchedDishes = await  data.meals.map(
                 (item: { strMeal: string; strMealThumb: string; }) => ({name: item.strMeal, image: item.strMealThumb}));
-                console.log(dishes);
                 setDishes(fetchedDishes);
               }
             fetchDishes();
@@ -43,7 +41,7 @@ function DishesList(props: IDishesListProp){
         <div className="disheslist__list" >
         {currentCategory.display && dishes.map(item => {
                 return (<Card key={id++}>
-                    <CategoryItem name={item.name} image={item.image} />
+                    <Dish name={item.name} image={item.image} />
                     </Card>
                 )
             })}
