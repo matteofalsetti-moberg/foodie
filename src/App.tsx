@@ -1,15 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import Categories from './components/Categories/Categories';
-import Header from './components/Header';
-import DishesList from './components/Dishes/DishesList';
-import {useAppSelector} from "./components/features/hooks"
+
+import Categories from './Containers/Categories/Categories';
+import Header from './components/Header/Header';
+import DishesList from './Containers/DishesList/DishesList';
+import { useSelector } from 'react-redux';
+import { RootState } from './Redux/categoryStore';
 
 
 
 
 function App() {
- const selectedCategory = useAppSelector(state => state.categories.value).category;
- const displayDishes = useAppSelector(state => state.categories.value).display;
+ const selectedCategory = useSelector((state: RootState) => state.categories.value).category;
+ const displayDishes = useSelector((state: RootState) => state.categories.value).display;
 
   return (
     <div className="App">

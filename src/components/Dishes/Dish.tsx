@@ -1,11 +1,10 @@
-type DishType = {
+export interface IDishType{
     name: string,
-    key: number
 }
 
-function Dish(props:DishType){
+function Dish(props: IDishType){
     return (
-        <p key={props.key} >{props.name}</p>
+        <p >{props.name}</p>
     )
 }
 

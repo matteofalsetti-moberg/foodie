@@ -1,8 +1,8 @@
 import React from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import "./Header.scss";
 import cart from "../assets/cart.png"
-import Button from "./Button";
+import Button from "../Button/Button";
 
 function Header (){
     return (

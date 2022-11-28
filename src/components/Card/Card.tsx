@@ -1,13 +1,13 @@
-import { setCategories } from "../features/Categories";
+
 import "./Card.scss"
 
-type CardProps={
+export interface ICardProps{
     key: number,
     children: JSX.Element,
 
 }
 
-function Card(props: CardProps){
+function Card(props: ICardProps){
 
     return(<div  key={props.key || 0} className="card" >{props.children}</div>)
 }

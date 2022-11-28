@@ -5,14 +5,13 @@ export const categoriesSlice = createSlice({
     name: "categories",
     initialState: { value: {category: "", display: false}},
     reducers: {
-        setCategories: (state,action) => {
+        setCategory: (state, action) => {
             state.value = action.payload;
-            console.log(state.value)
         }
     }
 
 })
 
-export const {setCategories} = categoriesSlice.actions;
+export const {setCategory} = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;

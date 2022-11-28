@@ -1,21 +1,22 @@
-import {useAppDispatch} from "../../components/features/hooks"
-import {setCategories} from '../features/Categories'
 
-type CategoryItemProp = {
+import { useDispatch } from 'react-redux';
+import {setCategory} from '../../Redux/Categories'
+
+export interface ICategoryItemProp{
     image: string,
     name: string,
 }
 
-function CategoryItem(props:CategoryItemProp){
-    const dispatch = useAppDispatch();
+function CategoryItem(props: ICategoryItemProp){
+    const dispatch = useDispatch();
 
     function sendCategories(){
-        dispatch(setCategories({category: props.name,display: true}))
+        dispatch(setCategory({category: props.name,display: true}))
     }
 
     return (<div className="categories__card" onClick={sendCategories}>
         <img className="categories__image" src={props.image} alt="Image not found" />
-        <p>{props.name}</p>
+        <div className="categories_text">{props.name}</div>
         </div>
     )
 }

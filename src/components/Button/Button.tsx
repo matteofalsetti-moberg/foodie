@@ -1,9 +1,10 @@
-type ButtonPorps={
+
+export interface IButtonPorps{
     icon: string,
     className: string
 }
 
- function Button(props: ButtonPorps){
+ function Button(props: IButtonPorps){
     return (<>
             <button className={props.className} >
         <i className={props.icon} />
