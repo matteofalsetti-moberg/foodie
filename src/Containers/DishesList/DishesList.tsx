@@ -1,7 +1,7 @@
 import Card from "../../components/Card/Card";
 import Dish from "../../components/Dishes/Dish";
 import { insertDish } from "../../Redux/Dishes";
-import { IDish } from "../../Redux/Dishes";
+import { IDishItem } from "../../components/Dishes/Dish";
 import "./DishesList.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
