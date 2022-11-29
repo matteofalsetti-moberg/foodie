@@ -16,15 +16,9 @@ export interface IDishesListProp {
 
 function DishesList(props: IDishesListProp) {
   const currentCategory = useSelector(
-    (state: RootState) => state.categories.value
+    (state: RootState) => state.categories.item
   );
-  const [dishes, setDishes] = useState([{ name: "", image: "" }]);
-
-  const dispatch = useDispatch();
-
-  function addDishToCart(dish: IDish) {
-    dispatch(insertDish(dish));
-  }
+ const [dishes, setDishes] = useState([{ name: "", image: "" }]);
 
   useEffect(() => {
     async function fetchDishes() {
@@ -53,10 +47,6 @@ function DishesList(props: IDishesListProp) {
             return (
               <Card key={item.name}>
                 <Dish
-                  onClick={addDishToCart({
-                    name: item.name,
-                    image: item.image,
-                  })}
                   name={item.name}
                   image={item.image}
                 />

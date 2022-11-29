@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-const initialDishesState: Array<IDish> = [];
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 
 export interface IDish {
   name: string;
@@ -8,11 +8,10 @@ export interface IDish {
 
 export const dishesSlice = createSlice({
   name: "dishes",
-  initialState: { items: initialDishesState },
+  initialState: { items: [{name: "", image: ""}] },
   reducers: {
-    insertDish: (state, action) => {
+    insertDish: (state, action: PayloadAction<IDish>) => {
       state.items = [...state.items, action.payload];
-      console.log(state.items);
     },
   },
 });

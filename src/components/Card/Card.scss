@@ -1,16 +1,15 @@
-.card{
-    display: flex;
-flex-direction: column;
-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 40%);
-border-radius: 25px;
-border: 2px solid rgb(233, 158, 47);
-align-items: center;
-justify-content: center;
-background-color: white;
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 40%);
+  border-radius: 25px;
+  border: 2px solid rgb(233, 158, 47);
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 
-    &:hover{
-        cursor: pointer;
-        background-color: rgb(255, 242, 220);
-    }
-
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255, 242, 220);
+  }
 }

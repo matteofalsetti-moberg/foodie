@@ -9,8 +9,8 @@ import { RootState } from './Redux/categoryStore';
 
 
 function App() {
- const selectedCategory = useSelector((state: RootState) => state.categories.value).category;
- const displayDishes = useSelector((state: RootState) => state.categories.value).display;
+ const selectedCategory = useSelector((state: RootState) => state.categories.item).category;
+ const displayDishes = useSelector((state: RootState) => state.categories.item).display;
 
   return (
     <div className="App">
