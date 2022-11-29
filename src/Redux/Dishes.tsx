@@ -5,13 +5,16 @@ export interface IDish {
     image: string;
 }
 
+export const initialState: IDish = { name: "", image: "" };
+
 export const dishesSlice = createSlice({
     name: "dishes",
-    initialState: { items: [{ name: "", image: "" }] },
+    initialState: { items: [initialState] },
     reducers: {
         insertDish: (state, action: PayloadAction<IDish>) => {
-            state.items = [...state.items, action.payload];
-        },
+            state.items[0].name == "" ? state.items = [action.payload] : state.items = [...state.items, action.payload]
+            console.log(state.items);
+        }
     },
 });
 

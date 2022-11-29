@@ -5,9 +5,11 @@ export interface ICategory {
     display: boolean;
 }
 
+const initialState: ICategory = { category: "", display: false }
+
 export const categoriesSlice = createSlice({
     name: "categories",
-    initialState: { item: { category: "", display: false } },
+    initialState: { item: initialState},
     reducers: {
         setCategory: (state, action: PayloadAction<ICategory>) => {
             state.item = action.payload;

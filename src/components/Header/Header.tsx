@@ -5,13 +5,17 @@ import munuIcon from "../../assets/menuIcon.png";
 import loginIcon from "../../assets/loginIcon.png";
 import cartIcon from "../../assets/cart.png";
 
-function Header() {
+interface IHeaderProps{
+    onCartClick: any,
+}
+
+function Header({onCartClick}: IHeaderProps) {
     return (
         <div className="header">
             <Button icon={munuIcon} />
             <SearchBar />
             <Button icon={loginIcon} />
-            <Button icon={cartIcon} />
+            <Button onClick={onCartClick} icon={cartIcon} />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import "./Card.scss";
 
 export interface ICardProps {
-    key: string;
+    key?: string;
     children: JSX.Element;
 }
 

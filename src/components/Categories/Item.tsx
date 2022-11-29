@@ -6,7 +6,7 @@ export interface ICategoryItemProp {
     name: string;
 }
 
-function CategoryItem({ image, name }: ICategoryItemProp) {
+function Item({ image, name }: ICategoryItemProp) {
     const dispatch = useDispatch();
 
     function sendCategories() {
@@ -25,4 +25,4 @@ function CategoryItem({ image, name }: ICategoryItemProp) {
     );
 }
 
-export default CategoryItem;
+export default Item;

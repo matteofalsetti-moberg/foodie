@@ -1,9 +1,9 @@
 import Card from "../../components/Card/Card";
-import CategoryItem from "../../components/Categories/CategoryItem";
+import Item from "../../components/Categories/Item";
 import "./Categories.scss";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../Redux/categoryStore";
+import { RootState } from "../../Redux/Store";
 
 function Categories() {
     const [categories, setCategories] = useState([{ name: "", image: "" }]);
@@ -40,7 +40,7 @@ function Categories() {
                         {categories.map((item) => {
                             return (
                                 <Card key={item.name}>
-                                    <CategoryItem
+                                    <Item
                                         name={item.name}
                                         image={item.image}
                                     />

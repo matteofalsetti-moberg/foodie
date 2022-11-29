@@ -4,7 +4,7 @@ import { insertDish } from "../../Redux/Dishes";
 import { IDish } from "../../Redux/Dishes";
 import "./DishesList.scss";
 import { useSelector } from "react-redux";
-import { RootState } from "../../Redux/categoryStore";
+import { RootState } from "../../Redux/Store";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
