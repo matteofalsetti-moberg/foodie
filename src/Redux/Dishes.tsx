@@ -36,11 +36,11 @@ export const dishesSlice = createSlice({
             );
             console.log(state.items.length);
 
-                if (state.items.length == 1) {
-                    state.items = [initialState];
-                    return;
-                }
-                if (state.items[itemIndex].value > 1) {
+            if (state.items.length == 1) {
+                state.items = [initialState];
+                return;
+            }
+            if (state.items[itemIndex].value > 1) {
                 state.items[itemIndex].value--;
                 return;
             } else {
