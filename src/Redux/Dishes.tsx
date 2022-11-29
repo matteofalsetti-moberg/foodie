@@ -29,9 +29,28 @@ export const dishesSlice = createSlice({
                 state.items = [...state.items, item];
             }
         },
+        removeDish: (state, action: PayloadAction<IDishItem>) => {
+            const item: IDishReducer = { ...action.payload, value: 1 };
+            const itemIndex = state.items.findIndex(
+                (obj) => obj.name == item.name
+            );
+            console.log(state.items.length);
+
+                if (state.items.length == 1) {
+                    state.items = [initialState];
+                    return;
+                }
+                if (state.items[itemIndex].value > 1) {
+                state.items[itemIndex].value--;
+                return;
+            } else {
+                state.items.splice(itemIndex, 1);
+                console.log(state.items);
+            }
+        },
     },
 });
 
-export const { insertDish } = dishesSlice.actions;
+export const { insertDish, removeDish } = dishesSlice.actions;
 
 export default dishesSlice.reducer;

@@ -8,7 +8,7 @@ interface IModalCart{
 }
 
 function ModalCart({onCloseModal}: IModalCart){
-    return (<div className="modal">
+    return (<div className="modal" onClick={onCloseModal} >
         <div className="modal__content" >
     <ModalHeader />
     <ModalBody />

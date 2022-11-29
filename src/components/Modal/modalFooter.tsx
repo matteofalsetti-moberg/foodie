@@ -1,3 +1,5 @@
+import Button from "../Button/Button";
+
 interface IModalFooter{
     onCloseModal: any
 }
@@ -6,7 +8,7 @@ interface IModalFooter{
 function ModalFooter({onCloseModal}: IModalFooter) {
     return (
         <div className="modal__footer">
-            <button onClick={onCloseModal}>CLOSE</button>
+            <Button onClick={onCloseModal} text="CLOSE" />
         </div>
     );
 }

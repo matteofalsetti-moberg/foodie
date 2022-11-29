@@ -1,5 +1,5 @@
 function ModalHeader(){
-    return (<div className="modal__header">TITLE</div>)
+    return (<div className="modal__header">CART</div>)
 }
 
 export default ModalHeader;

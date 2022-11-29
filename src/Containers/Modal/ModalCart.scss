@@ -10,25 +10,43 @@
     justify-content: center;
     flex-direction: column;
 
-    &__content{
+    &__content {
         background-color: white;
-        width: 500px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
+    &__header {
+        padding: 10px;
+        font-size: 30px;
+    }
 
-    &__header{
+    &__body {
+        padding: 10px;
+        border-top: 2px solid rgb(233, 158, 47);
+        border-bottom: 2px solid rgb(233, 158, 47);
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__elements {
+        display: flex;
+    }
+    &__buttonvalue {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
         padding: 10px;
     }
 
-    &__body{
+    &__footer {
         padding: 10px;
-        border-top: 2px  solid rgb(233, 158, 47);
-        border-bottom: 2px  solid rgb(233, 158, 47);
     }
-
-    &__footer{
-        padding: 10px
-    }
-
-    
 }
