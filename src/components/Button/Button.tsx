@@ -1,17 +1,19 @@
+import "./button.scss";
 
-import "./button.scss"
-
-export interface IButtonPorps{
-    icon?: string,
-    text?: string,
+export interface IButtonPorps {
+  icon?: string;
+  text?: string;
+  type?: "button" | "submit" | "reset";
+  onClick?: any;
 }
 
- function Button(props: IButtonPorps){
-    return (
-            <button className="button">
-        {props.icon && <img className="button__image" src={props.icon}/>}
-        {props.text && <div>{props.text}</div>}
-    </button>)
-};
+function Button({ icon, text, type, onClick }: IButtonPorps) {
+  return (
+    <button type={type} onClick={onClick} className="button">
+      {icon && <img className="button__image" src={icon} />}
+      {text && <div>{text}</div>}
+    </button>
+  );
+}
 
 export default Button;

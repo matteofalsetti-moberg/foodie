@@ -3,10 +3,14 @@
     justify-content: center;
     border-radius: 10px;
     border: 2px solid rgb(233, 158, 47);
-    background-color: rgb(233, 158, 47);;
+    background-color: rgb(233, 158, 47);
 
 
     &__image{
-        height: 50px;
+        height: 40px;
+    }
+
+    &:hover{
+        cursor: pointer;
     }
 }

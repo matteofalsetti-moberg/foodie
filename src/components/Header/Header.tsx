@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import SearchBar from "../SearchBar/SearchBar";
 import "./Header.scss";
 import munuIcon from "../../assets/menuIcon.png"
-import loginIcon from "../../assets/login.jpg";
+import loginIcon from "../../assets/loginIcon.png";
 import cartIcon from "../../assets/cart.png"
 
 

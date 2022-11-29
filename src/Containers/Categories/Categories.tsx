@@ -27,13 +27,12 @@ function Categories(){
         fetchCategories();
       }, [])
 
-    let id=0;
     return ( //don't like the solution with categories[0].name
         <div  className="categories">
             {!!currentCategory && <><h1 className="categories__title" >Categories</h1>
         <div className="categories__items">
                 {categories.map(item => {
-                return (<Card  key={id++} >
+                return (<Card  key={item.name} >
                     <CategoryItem name={item.name} image={item.image} />
                     </Card>
                 )
