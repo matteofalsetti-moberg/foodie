@@ -5,6 +5,10 @@
     font-size: 20px;
     flex-direction: column;
 
+    &__title {
+        padding: 0px 30px;
+    }
+
     &__items {
         display: flex;
         justify-content: flex-start;

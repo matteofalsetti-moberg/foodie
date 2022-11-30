@@ -16,7 +16,7 @@ function CategoryItem({ image, name }: ICategoryItemProp) {
 
     return (
         <div className="categories__card" onClick={sendCategories}>
-            <Item name={name} image={image}/>
+            <Item name={name} image={image} />
         </div>
     );
 }

@@ -40,7 +40,10 @@ function Categories() {
                         {categories.map((item) => {
                             return (
                                 <Card key={item.name}>
-                                    <CategoryItem name={item.name} image={item.image} />
+                                    <CategoryItem
+                                        name={item.name}
+                                        image={item.image}
+                                    />
                                 </Card>
                             );
                         })}
