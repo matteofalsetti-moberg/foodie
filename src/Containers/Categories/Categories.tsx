@@ -1,5 +1,5 @@
 import Card from "../../components/Card/Card";
-import Item from "../../components/Categories/Item";
+import CategoryItem from "../../components/Categories/CategoryItem";
 import "./Categories.scss";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -40,7 +40,7 @@ function Categories() {
                         {categories.map((item) => {
                             return (
                                 <Card key={item.name}>
-                                    <Item name={item.name} image={item.image} />
+                                    <CategoryItem name={item.name} image={item.image} />
                                 </Card>
                             );
                         })}

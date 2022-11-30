@@ -9,11 +9,11 @@ import { useState } from "react";
 
 function App() {
     const selectedCategory = useSelector(
-        (state: RootState) => state.categories.item
-    ).category;
+        (state: RootState) => state.categories.item.category
+    );
     const displayDishes = useSelector(
-        (state: RootState) => state.categories.item
-    ).display;
+        (state: RootState) => state.categories.item.display
+    );
 
     const [displayModal, setDisplayModal] = useState(false);
     function seeModal(){

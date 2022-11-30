@@ -1,12 +1,13 @@
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../Redux/Categories";
+import Item from "../Item/Item";
 
 export interface ICategoryItemProp {
     image: string;
     name: string;
 }
 
-function Item({ image, name }: ICategoryItemProp) {
+function CategoryItem({ image, name }: ICategoryItemProp) {
     const dispatch = useDispatch();
 
     function sendCategories() {
@@ -15,14 +16,9 @@ function Item({ image, name }: ICategoryItemProp) {
 
     return (
         <div className="categories__card" onClick={sendCategories}>
-            <img
-                className="categories__image"
-                src={image}
-                alt="Image not found"
-            />
-            <div className="categories_text">{name}</div>
+            <Item name={name} image={image}/>
         </div>
     );
 }
 
-export default Item;
+export default CategoryItem;

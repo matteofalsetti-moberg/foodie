@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { insertDish } from "../../Redux/Dishes";
 import Button from "../Button/Button";
+import Item from "../Item/Item";
+import "./Dish.scss"
 
 export interface IDishItem {
     image: string;
@@ -15,13 +17,8 @@ function Dish({ image, name }: IDishItem) {
     }
 
     return (
-        <div className="categories__card">
-            <img
-                className="categories__image"
-                src={image}
-                alt="Image not found"
-            />
-            <div className="categories_text">{name}</div>
+        <div className="dishes">
+            <Item name={name} image={image} />
             <Button onClick={addToCart} text="ADD TO CART" />
         </div>
     );

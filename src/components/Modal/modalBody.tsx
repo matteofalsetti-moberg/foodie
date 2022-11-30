@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
@@ -6,7 +5,7 @@ import { removeDish } from "../../Redux/Dishes";
 
 import Button from "../Button/Button";
 import Card from "../Card/Card";
-import Item from "../Categories/Item";
+import Item from "../Item/Item";
 
 function ModalBody() {
     const dishList = useSelector((state: RootState) => state.dishes.items);
@@ -38,7 +37,7 @@ function ModalBody() {
                     </Card>
                 ))
             ) : (
-                <div>NO SELECTED DISDHES</div>
+                <div>The cart is empty! Try to select some dishes</div>
             )}
         </div>
     );

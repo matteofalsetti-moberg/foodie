@@ -1,15 +1,19 @@
 .disheslist {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0px 30px;
 
     &__list {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: flex-start;
         flex-direction: row;
-        justify-content: space-evenly;
-    }
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0px 30px;
+        }
 
     &__title {
         font-size: 40px;
