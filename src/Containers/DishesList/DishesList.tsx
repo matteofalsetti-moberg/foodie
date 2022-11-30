@@ -1,7 +1,6 @@
 import Card from "../../components/Card/Card";
-import Dish from "../../components/Dishes/Dish";
+import Dish from "./Dish";
 import { insertDish } from "../../Redux/Dishes";
-import { IDishItem } from "../../components/Dishes/Dish";
 import "./DishesList.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
@@ -29,7 +28,7 @@ function DishesList(props: IDishesListProp) {
 
             const fetchedDishes = await data.meals.map(
                 (item: { strMeal: string; strMealThumb: string }) => ({
-                    name: item.strMeal,
+                    name: item.strMeal.trim(),
                     image: item.strMealThumb,
                 })
             );

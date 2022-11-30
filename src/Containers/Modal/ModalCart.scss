@@ -11,11 +11,12 @@
     flex-direction: column;
 
     &__content {
-        width: auto;
+        background-color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        width: 500px;
     }
 
     &__header {
@@ -25,35 +26,34 @@
 
     &__body {
         padding: 10px;
+        width: 480px;
         border-top: 2px solid rgb(233, 158, 47);
         border-bottom: 2px solid rgb(233, 158, 47);
         display: flex;
         justify-content: center;
         align-content: flex-start;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     &__elements {
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-items: center;
     }
-    &__buttonvalue {
+    &__display {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 20px;
         padding: 10px;
     }
 
-    &__footer {
-    display: flex;
-    padding: 10px;
-    flex-direction: row;
-    align-content: flex-start;
-    align-items: center;
-    }
 
-    &__price{
-        font-size: 20px;
+    &__counter{
+        font-size: 25px;
+        width: 100px;
     }
 }

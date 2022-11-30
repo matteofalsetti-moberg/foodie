@@ -30,5 +30,9 @@
         flex-direction: column;
         width: 140px;
         gap: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }

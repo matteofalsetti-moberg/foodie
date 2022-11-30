@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../Redux/Categories";
-import Item from "../Item/Item";
+import Item from "../../components/Item/Item";
 
 export interface ICategoryItemProp {
     image: string;

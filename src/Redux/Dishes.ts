@@ -1,51 +1,42 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IDishItem } from "../components/Dishes/Dish";
 
-export interface IDishReducer {
+interface IDishReducer {
     name: string;
     image: string;
-    value: number;
+    count: number;
+    price: number;
 }
 
-export const initialState: IDishReducer = { name: "", image: "", value: 0 };
+const initialState: IDishReducer[] = [];
 
 export const dishesSlice = createSlice({
     name: "dishes",
-    initialState: { items: [initialState] },
+    initialState: { items: initialState, totalPrice: 0 },
     reducers: {
-        insertDish: (state, action: PayloadAction<IDishItem>) => {
-            const item: IDishReducer = { ...action.payload, value: 1 };
+        insertDish: (state, action: PayloadAction<IDishReducer>) => {
             const itemIndex = state.items.findIndex(
-                (obj) => obj.name == item.name
+                (obj) => obj.name == action.payload.name
             );
 
-            if (itemIndex != -1) {
-                state.items[itemIndex].value++;
+            if (itemIndex >= 0) {
+                state.items[itemIndex].count += action.payload.count;
             } else {
-                if (state.items[0].name == "") {
-                    state.items = [item];
-                    return;
-                }
-                state.items = [...state.items, item];
+                state.items = [...state.items, action.payload];
             }
+            state.totalPrice += action.payload.price * action.payload.count;
         },
-        removeDish: (state, action: PayloadAction<IDishItem>) => {
-            const item: IDishReducer = { ...action.payload, value: 1 };
+        removeDish: (state, action: PayloadAction<IDishReducer>) => {
             const itemIndex = state.items.findIndex(
-                (obj) => obj.name == item.name
+                (obj) => obj.name == action.payload.name
             );
-            console.log(state.items.length);
 
-            if (state.items.length == 1) {
-                state.items = [initialState];
-                return;
-            }
-            if (state.items[itemIndex].value > 1) {
-                state.items[itemIndex].value--;
+            if (state.items[itemIndex].count > 1) {
+                state.items[itemIndex].count -= action.payload.count;
+                state.totalPrice -= action.payload.price * action.payload.count;
                 return;
             } else {
                 state.items.splice(itemIndex, 1);
-                console.log(state.items);
+                state.totalPrice -= action.payload.price * action.payload.count;
             }
         },
     },

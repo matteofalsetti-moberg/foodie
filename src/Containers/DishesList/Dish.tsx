@@ -1,32 +1,29 @@
 import { useDispatch } from "react-redux";
 import { insertDish } from "../../Redux/Dishes";
-import { addPrice } from "../../Redux/price";
-import Button from "../Button/Button";
-import Item from "../Item/Item";
+import Button from "../../components/Button/Button";
+import Item from "../../components/Item/Item";
 import "./Dish.scss";
 
-export interface IDishItem {
+export interface IDishProp {
     image: string;
     name: string;
 }
 
-function Dish({ image, name }: IDishItem) {
+function Dish({ image, name }: IDishProp) {
     const dispatch = useDispatch();
     const realPrice = name.length;
-    const price = `${realPrice} €`;
 
 
     function addToCart() {
-        dispatch(insertDish({ name, image }));
-        dispatch(addPrice(realPrice));
+        dispatch(insertDish({ name, image, count: 1, price: realPrice }));
     }
 
     return (
         <div className="dishes">
             <Item name={name} image={image} />
             <div className="dishes__footer">
-                <div className="dishes__price">{price}</div>
                 <Button onClick={addToCart} text="ADD TO CART" />
+                <div>{`${realPrice} €`}</div>
             </div>
         </div>
     );

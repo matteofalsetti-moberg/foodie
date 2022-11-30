@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
-import Button from "../Button/Button";
+import Button from "../../components/Button/Button";
 import "./modalFooter.scss"
 
 interface IModalFooter {
@@ -8,7 +8,7 @@ interface IModalFooter {
 }
 
 function ModalFooter({ onCloseModal }: IModalFooter) {
-    const realPrice = useSelector((state: RootState) => state.price.value);
+    const realPrice = useSelector((state: RootState) => state.dishes.totalPrice);
     const price = `${realPrice} €`
     return (
         <div className="modalfooter">

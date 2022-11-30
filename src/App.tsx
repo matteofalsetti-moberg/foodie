@@ -1,5 +1,5 @@
 import Categories from "./Containers/Categories/Categories";
-import Header from "./components/Header/Header";
+import Header from "./Containers/Header/Header";
 import DishesList from "./Containers/DishesList/DishesList";
 import { useSelector } from "react-redux";
 import { RootState } from "./Redux/Store";

@@ -1,5 +1,5 @@
 import Card from "../../components/Card/Card";
-import CategoryItem from "../../components/Categories/CategoryItem";
+import CategoryItem from "./CategoryItem";
 import "./Categories.scss";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
