@@ -12,6 +12,7 @@ export interface IDishProp {
 function Dish({ image, name }: IDishProp) {
     const dispatch = useDispatch();
     const realPrice = name.length;
+    const truncatedName = name.length > 15 ? name.substring(0,15).concat("...") : name;
 
 
     function addToCart() {
@@ -20,7 +21,7 @@ function Dish({ image, name }: IDishProp) {
 
     return (
         <div className="dishes">
-            <Item name={name} image={image} />
+            <Item name={truncatedName} image={image} />
             <div className="dishes__footer">
                 <Button onClick={addToCart} text="ADD TO CART" />
                 <div>{`${realPrice} €`}</div>
