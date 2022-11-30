@@ -4,8 +4,8 @@ import { RootState } from "../../Redux/Store";
 import { insertDish, removeDish } from "../../Redux/Dishes";
 
 import Button from "../../components/Button/Button";
-import plus from "../../assets/plus.png"
-import minus from "../../assets/minus.png"
+import plus from "../../assets/plus.png";
+import minus from "../../assets/minus.png";
 
 function ModalBody() {
     const dishList = useSelector((state: RootState) => state.dishes.items);
@@ -16,37 +16,39 @@ function ModalBody() {
             {dishList.length ? (
                 dishList.map((item) => (
                     <div className="modal__elements" key={item.name}>
-                                <div>{item.name}</div>
-                            
-                            <div className="modal__display">
-                                <Button icon={minus}
-                                    onClick={() =>
-                                        dispatch(
-                                            removeDish({
-                                                name: item.name,
-                                                image: item.image,
-                                                count: 1,
-                                                price: item.name.length,
-                                            })
-                                        )
-                                    }
-                                />
-                                <Button
-                                    onClick={() =>
-                                        dispatch(
-                                            insertDish({
-                                                name: item.name,
-                                                image: item.image,
-                                                count: 1,
-                                                price: item.name.length,
-                                            })
-                                        )
-                                    }
-                                    icon={plus}
-                                />
-                                <div className="modal__counter"> {item.count} × {item.price}€</div>
-                                </div>
-
+                        <div className="modal__name">{item.name}</div>
+                        <div className="modal__display">
+                            <Button
+                                icon={minus}
+                                onClick={() =>
+                                    dispatch(
+                                        removeDish({
+                                            name: item.name,
+                                            image: item.image,
+                                            count: 1,
+                                            price: item.name.length,
+                                        })
+                                    )
+                                }
+                            />
+                            <Button
+                                onClick={() =>
+                                    dispatch(
+                                        insertDish({
+                                            name: item.name,
+                                            image: item.image,
+                                            count: 1,
+                                            price: item.name.length,
+                                        })
+                                    )
+                                }
+                                icon={plus}
+                            />
+                            <div className="modal__counter">
+                                {" "}
+                                {item.count} × {item.price}€
+                            </div>
+                        </div>
                     </div>
                 ))
             ) : (

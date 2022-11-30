@@ -30,7 +30,7 @@
         border-top: 2px solid rgb(233, 158, 47);
         border-bottom: 2px solid rgb(233, 158, 47);;
         overflow-y: scroll;
-        height: 500px;
+        max-height: 500px;
     }
 
     &__elements {
@@ -47,6 +47,10 @@
         justify-content: center;
         gap: 20px;
         padding: 10px;
+    }
+
+    &__name{
+        font-size: 20px;
     }
 
 

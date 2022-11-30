@@ -1,3 +1,5 @@
+
+import React from "react";
 import Categories from "./Containers/Categories/Categories";
 import Header from "./Containers/Header/Header";
 import DishesList from "./Containers/DishesList/DishesList";
@@ -5,6 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "./Redux/Store";
 import ModalOverlay from "./Containers/Modal/ModalCart";
 import { useState } from "react";
+import ReactDOM from "react-dom";
 
 
 function App() {
@@ -26,7 +29,7 @@ function App() {
 
     return (
         <div className="App">
-          {displayModal && <ModalOverlay onCloseModal={closeModal}/> }
+          {displayModal && ReactDOM.createPortal(<ModalOverlay onCloseModal={closeModal}/>, document.getElementById('modal-root')! )}
             <Header onCartClick={seeModal} />
             <Categories />
             {displayDishes && (
