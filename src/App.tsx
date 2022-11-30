@@ -1,4 +1,3 @@
-
 import React from "react";
 import Categories from "./Containers/Categories/Categories";
 import Header from "./Containers/Header/Header";
@@ -9,7 +8,6 @@ import ModalOverlay from "./Containers/Modal/ModalCart";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 
-
 function App() {
     const selectedCategory = useSelector(
         (state: RootState) => state.categories.item.category
@@ -19,17 +17,22 @@ function App() {
     );
 
     const [displayModal, setDisplayModal] = useState(false);
-    function seeModal(){
+    function seeModal() {
         setDisplayModal(true);
     }
 
-    function closeModal(){
-        setDisplayModal(false)
+    function closeModal() {
+        setDisplayModal(false);
     }
 
     return (
         <div className="App">
-          {displayModal && ReactDOM.createPortal(<ModalOverlay onCloseModal={closeModal}/>, document.getElementById('modal-root')! )}
+            {displayModal &&
+                document.getElementById("modal-root") &&
+                ReactDOM.createPortal(
+                    <ModalOverlay onCloseModal={closeModal} />,
+                    document.getElementById("modal-root")!
+                )}
             <Header onCartClick={seeModal} />
             <Categories />
             {displayDishes && (
