@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
 
+
 function Categories() {
     const [categories, setCategories] = useState([{ name: "", image: "" }]);
     const currentCategory = useSelector(
@@ -14,7 +15,7 @@ function Categories() {
     useEffect(() => {
         async function fetchCategories() {
             const response = await fetch(
-                "https://www.themealdb.com/api/json/v1/1/categories.php"
+                `https://www.themealdb.com/api/json/v1/1/categories.php`
             );
             const data = await response.json();
 
@@ -31,7 +32,6 @@ function Categories() {
     }, []);
 
     return (
-        //don't like the solution with categories[0].name
         <div className="categories">
             {!!currentCategory && (
                 <>

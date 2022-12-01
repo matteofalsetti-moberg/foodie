@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { DropdownButton } from "react-bootstrap";
+import "./dropdownMenu.scss"
 
 
 function DropdownMenu() {
@@ -9,10 +9,10 @@ function DropdownMenu() {
     return (
         <DropdownButton variant="secondary" title="Menu">
             <Dropdown.Item >
-                <Link to="/">Catagories</Link>
+                <NavLink className="dropMenu__link" to="/">Catagories</NavLink>
             </Dropdown.Item>
             <Dropdown.Item >
-                <Link to="/aboutus">About us</Link>
+                <NavLink className="dropMenu__link" to="/randomMeal">RandomMeal</NavLink>
             </Dropdown.Item>
         </DropdownButton>
     );

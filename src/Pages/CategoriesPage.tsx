@@ -15,7 +15,7 @@ function CategoriesPage() {
         <div>
             <Categories />
             {displayDishes && (
-                <DishesList category={selectedCategory}></DishesList>
+                <DishesList category={selectedCategory!}></DishesList>
             )}
         </div>
     );

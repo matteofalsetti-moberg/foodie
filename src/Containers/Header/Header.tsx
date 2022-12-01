@@ -4,8 +4,7 @@ import "./Header.scss";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import ModalCart from "../Modal/ModalCart/ModalCart";
-import DropdownMenu from "../dropdown/dropdown";
-
+import DropdownMenu from "../dropdown/dropdownMenu";
 
 import loginIcon from "../../assets/loginIcon.png";
 import cartIcon from "../../assets/cart.png";
@@ -28,8 +27,9 @@ function Header() {
                     <ModalCart onCloseModal={closeCart} />,
                     document.getElementById("modal-root")!
                 )}
-
-            <DropdownMenu />
+                <div>
+                <DropdownMenu />
+                </div>
             <SearchBar />
             <div className="header__buttons">
                 <Button icon={loginIcon} />

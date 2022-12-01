@@ -1,7 +1,7 @@
 import Header from "./Containers/Header/Header";
 import CategoriesPage from "./Pages/CategoriesPage";
-import AboutUs from "./Pages/AboutUs";
-import { Route, Routes, redirect } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import AboutUs from "./Pages/RandomMeal";
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<CategoriesPage />} />
-                <Route path="/aboutus" element={<AboutUs />} />
+                <Route path="/randomMeal" element={<AboutUs />} />
             </Routes>
         </div>
     );
