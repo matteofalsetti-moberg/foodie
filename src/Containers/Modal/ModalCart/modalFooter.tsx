@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../../Redux/Store";
-import Button from "../../components/Button/Button";
+import { RootState } from "../../../Redux/Store";
+import Button from "../../../components/Button/Button";
 import "./modalFooter.scss"
 
 interface IModalFooter {

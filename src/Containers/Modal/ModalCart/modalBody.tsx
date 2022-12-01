@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { RootState } from "../../Redux/Store";
-import { insertDish, removeDish } from "../../Redux/Dishes";
+import { RootState } from "../../../Redux/Store";
+import { insertDish, removeDish } from "../../../Redux/Dishes";
 
-import Button from "../../components/Button/Button";
-import plus from "../../assets/plus.png";
-import minus from "../../assets/minus.png";
+import Button from "../../../components/Button/Button";
+import plus from "../../../assets/plus.png";
+import minus from "../../../assets/minus.png";
 
 function ModalBody() {
     const dishList = useSelector((state: RootState) => state.dishes.items);

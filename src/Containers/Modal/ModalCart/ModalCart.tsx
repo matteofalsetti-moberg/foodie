@@ -2,7 +2,6 @@ import ModalHeader from "./modalHeader";
 import ModalBody from "./modalBody";
 import ModalFooter from "./modalFooter";
 import "./ModalCart.scss";
-import Card from "../../components/Card/Card";
 
 interface IModalCart {
     onCloseModal: any;
