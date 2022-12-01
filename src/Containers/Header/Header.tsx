@@ -1,13 +1,14 @@
 import Button from "../../components/Button/Button";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import "./Header.scss";
-import munuIcon from "../../assets/menuIcon.png";
-import loginIcon from "../../assets/loginIcon.png";
-import cartIcon from "../../assets/cart.png";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 import ModalCart from "../Modal/ModalCart/ModalCart";
-import {NavLink} from 'react-router-dom'
+import DropdownMenu from "../dropdown/dropdown";
+
+
+import loginIcon from "../../assets/loginIcon.png";
+import cartIcon from "../../assets/cart.png";
 
 function Header() {
     const [displayModal, setDisplayModal] = useState(false);
@@ -27,12 +28,8 @@ function Header() {
                     <ModalCart onCloseModal={closeCart} />,
                     document.getElementById("modal-root")!
                 )}
-                <NavLink to="/">CATEGORIES</NavLink>
-                <NavLink to="/aboutUs" >ABOUT US</NavLink>
 
-            <div className="header__buttons">
-                <Button icon={munuIcon} />
-            </div>
+            <DropdownMenu />
             <SearchBar />
             <div className="header__buttons">
                 <Button icon={loginIcon} />

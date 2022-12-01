@@ -1,7 +1,7 @@
 import Header from "./Containers/Header/Header";
 import CategoriesPage from "./Pages/CategoriesPage";
 import AboutUs from "./Pages/AboutUs";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, redirect } from "react-router-dom";
 
 function App() {
     return (
