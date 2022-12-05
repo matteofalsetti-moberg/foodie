@@ -1,7 +1,8 @@
 import React from "react";
-import {Field, Formik, Form } from "formik";
+import { Field, Formik, Form } from "formik";
 import "./LoginPage.scss";
 import { Button } from "react-bootstrap";
+import FormField from "../../components/FormField/FormField";
 
 interface ILogin {
     name: string;
@@ -24,13 +25,23 @@ function Login() {
                 <div className="loginForm">
                     <Form className="loginForm__form">
                         <div className="loginForm__field">
-                            <label>Email</label>
-                            <Field name="name" type="input" />
+                            <Field
+                                name="name"
+                                type="input"
+                                labelName="Full name"
+                                placeholder="Inser full name here"
+                                as={FormField}
+                            />
                         </div>
 
                         <div className="loginForm__field">
-                            <label>Email</label>
-                            <Field name="name" type="input" handleChange />
+                            <Field
+                                name="name"
+                                type="input"
+                                labelName="e-mail"
+                                placeholder="Insert e-mail here"
+                                as={FormField}
+                            />
                         </div>
 
                         <Button type="submit">Submit</Button>
