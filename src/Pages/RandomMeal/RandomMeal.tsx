@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Card from "../components/Card/Card";
-import Dish from "../Containers/DishesList/Dish";
+import Card from "../../components/Card/Card";
+import Dish from "../../Containers/DishesList/Dish";
 import "./RandomMeal.scss"
 
 function RandomMeal() {

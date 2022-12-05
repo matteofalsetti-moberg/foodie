@@ -1,6 +1,6 @@
-import { RootState } from "../Redux/Store";
-import Categories from "../Containers/Categories/Categories";
-import DishesList from "../Containers/DishesList/DishesList";
+import { RootState } from "../../Redux/Store";
+import Categories from "../../Containers/Categories/Categories";
+import DishesList from "../../Containers/DishesList/DishesList";
 import { useSelector } from "react-redux";
 
 function CategoriesPage() {

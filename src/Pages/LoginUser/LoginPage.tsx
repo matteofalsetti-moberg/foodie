@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik } from "formik";
+import {Field, Formik, Form } from "formik";
 import "./LoginPage.scss";
 import { Button } from "react-bootstrap";
 
@@ -16,35 +16,25 @@ function Login() {
         <Formik
             initialValues={{
                 name: "insert name here",
-                email: "insrt e-mail here",
+                email: "insert e-mail here",
             }}
             onSubmit={(data) => onSubmitfn(data)}
         >
             {({ values, handleChange, handleBlur, handleSubmit }) => (
                 <div className="loginForm">
-                    <form className="loginForm__form" onSubmit={handleSubmit}>
+                    <Form className="loginForm__form">
                         <div className="loginForm__field">
-                            <label>Full Name</label>
-                            <input
-                                type="name"
-                                name="name"
-                                onChange={handleChange}
-                                value={values.name}
-                            ></input>
+                            <label>Email</label>
+                            <Field name="name" type="input" />
                         </div>
 
                         <div className="loginForm__field">
                             <label>Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                onChange={handleChange}
-                                value={values.email}
-                            ></input>
+                            <Field name="name" type="input" handleChange />
                         </div>
 
                         <Button type="submit">Submit</Button>
-                    </form>
+                    </Form>
                 </div>
             )}
         </Formik>
