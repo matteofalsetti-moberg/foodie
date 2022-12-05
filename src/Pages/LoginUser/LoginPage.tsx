@@ -12,8 +12,12 @@ interface ILogin {
 
 function Login() {
     function onSubmitfn(data: ILogin) {
-        console.log(data);
+        console.log(data);  //onSubmit insert in redux store
     }
+    function checkValues(values: ILogin){
+        console.log(values);  // implement YUP
+    }
+
     return (
         <Formik
             initialValues={{
@@ -22,8 +26,9 @@ function Login() {
                 cardNumber: "",
             }}
             onSubmit={(data) => onSubmitfn(data)}
+            validate={(values) => checkValues(values)}
         >
-            {({ values, handleChange, handleBlur, handleSubmit }) => (
+            {() => (
                 <div className="loginForm">
                     <Form className="loginForm__form">
                         <div className="loginForm__field">
