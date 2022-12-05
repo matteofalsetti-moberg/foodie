@@ -7,6 +7,7 @@ import FormField from "../../components/FormField/FormField";
 interface ILogin {
     name: string;
     email: string;
+    cardNumber: string;
 }
 
 function Login() {
@@ -16,8 +17,9 @@ function Login() {
     return (
         <Formik
             initialValues={{
-                name: "insert name here",
-                email: "insert e-mail here",
+                name: "",
+                email: "",
+                cardNumber: "",
             }}
             onSubmit={(data) => onSubmitfn(data)}
         >
@@ -36,10 +38,20 @@ function Login() {
 
                         <div className="loginForm__field">
                             <Field
-                                name="name"
+                                name="email"
                                 type="input"
                                 labelName="e-mail"
                                 placeholder="Insert e-mail here"
+                                as={FormField}
+                            />
+                        </div>
+
+                        <div className="loginForm__field">
+                            <Field
+                                name="cardNumber"
+                                type="input"
+                                labelName="Card number"
+                                placeholder="Insert card number here"
                                 as={FormField}
                             />
                         </div>

@@ -2,16 +2,15 @@ import React from "react";
 
 interface IFormField {
     labelName: string;
-    placeholder: string;
 }
 
-function FormField({ labelName, placeholder }: IFormField) {
+function FormField({ labelName, ...props}: IFormField) {
     return (
         <>
             <div>
                 <label>{labelName}</label>
             </div>
-            <input placeholder={placeholder}/>
+            <input {...props}/>
         </>
     );
 }
