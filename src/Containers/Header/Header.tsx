@@ -27,9 +27,9 @@ function Header() {
                     <ModalCart onCloseModal={closeCart} />,
                     document.getElementById("modal-root")!
                 )}
-                <div>
+
                 <DropdownMenu />
-                </div>
+
             <SearchBar />
             <div className="header__buttons">
                 <Button icon={loginIcon} />
