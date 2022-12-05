@@ -1,0 +1,38 @@
+.categories {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    font-size: 20px;
+    flex-direction: column;
+
+    &__title {
+        padding: 0px 30px;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0px 30px;
+    }
+
+    &__image {
+        margin: 10px;
+        height: 60px;
+        width: auto;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 140px;
+        gap: 10px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

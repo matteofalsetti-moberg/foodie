@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 80px;
+    padding: 0px 10px;
+    align-items: center; 
+    background-color: rgb(233, 158, 47);
+
+    &__input {
+        width: 65%;
+        height: 35px;
+    }
+    &__buttons {
+        width: 50px;
+    }
+
+}
