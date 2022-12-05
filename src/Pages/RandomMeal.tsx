@@ -15,7 +15,6 @@ function RandomMeal() {
                 `https://www.themealdb.com/api/json/v1/1/random.php`
             );
             const data = await response.json();
-            console.log(data.meals[0].strMeal);
             const fetchedDishes = {
                 name: data.meals[0].strMeal,
                 image: data.meals[0].strMealThumb,

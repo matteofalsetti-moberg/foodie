@@ -25,7 +25,7 @@ export const dishesSlice = createSlice({
             }
             state.totalPrice += action.payload.price * action.payload.count;
         },
-        removeDish: (state, action: PayloadAction<IDishReducer>) => {
+        removeDish: (state, action: PayloadAction<{name: string, count: number, price: number}>) => {
             const itemIndex = state.items.findIndex(
                 (obj) => obj.name == action.payload.name
             );

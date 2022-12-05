@@ -3,11 +3,12 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import "./Header.scss";
 import { useState } from "react";
 import ReactDOM from "react-dom";
-import ModalCart from "../Modal/ModalCart/ModalCart";
+import ModalCart from "../Modal/ModalCart";
 import DropdownMenu from "../dropdown/dropdownMenu";
 
 import loginIcon from "../../assets/loginIcon.png";
 import cartIcon from "../../assets/cart.png";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [displayModal, setDisplayModal] = useState(false);
@@ -17,6 +18,9 @@ function Header() {
     }
     function closeCart() {
         setDisplayModal(false);
+    }
+    function sendToLoginPage(){
+
     }
 
     return (
@@ -31,9 +35,9 @@ function Header() {
                 <DropdownMenu />
 
             <SearchBar />
-            <div className="header__buttons">
+            <Link className="header__buttons" to="/login">
                 <Button icon={loginIcon} />
-            </div>
+            </Link>
             <div className="header__buttons">
                 <Button onClick={seeCart} icon={cartIcon} />
             </div>
