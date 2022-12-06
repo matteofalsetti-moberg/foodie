@@ -6,21 +6,20 @@ import ReactDOM from "react-dom";
 import ModalCart from "../Modal/ModalCart";
 import DropdownMenu from "../dropdown/dropdownMenu";
 
-import loginIcon from "../../assets/loginIcon.png";
 import cartIcon from "../../assets/cart.png";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Redux/Store";
+import DisplayUser from "../DisplayUser/DisplayUser";
 
 function Header() {
     const [displayModal, setDisplayModal] = useState(false);
-
+    const currentUser = useSelector((state: RootState) => state.user);
+    console.log(!currentUser.state);
     function seeCart() {
         setDisplayModal(true);
     }
     function closeCart() {
         setDisplayModal(false);
-    }
-    function sendToLoginPage(){
-
     }
 
     return (
@@ -31,13 +30,9 @@ function Header() {
                     <ModalCart onCloseModal={closeCart} />,
                     document.getElementById("modal-root")!
                 )}
-
-                <DropdownMenu />
-
+            <DropdownMenu />
             <SearchBar />
-            <Link className="header__buttons" to="/login">
-                <Button icon={loginIcon} />
-            </Link>
+            <DisplayUser />
             <div className="header__buttons">
                 <Button onClick={seeCart} icon={cartIcon} />
             </div>

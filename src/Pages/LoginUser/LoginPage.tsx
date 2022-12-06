@@ -3,42 +3,83 @@ import { Field, Formik, Form } from "formik";
 import "./LoginPage.scss";
 import { Button } from "react-bootstrap";
 import FormField from "../../components/FormField/FormField";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../../Redux/User";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
 
 interface ILogin {
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
     cardNumber: string;
 }
 
 function Login() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     function onSubmitfn(data: ILogin) {
-        console.log(data);  //onSubmit insert in redux store
+        dispatch(login(data));
+        navigate("/");
     }
-    function checkValues(values: ILogin){
-        console.log(values);  // implement YUP
+
+    function logoutHandler() {
+        dispatch(logout());
+      // navigate("/");
     }
+
+    const inputValidation = Yup.object().shape({
+        firstName: Yup.string()
+            .min(2, "Too Short!")
+            .max(50, "Too Long!")
+            .required("Required"),
+        lastName: Yup.string()
+            .min(2, "Too Short!")
+            .max(50, "Too Long!")
+            .required("Required"),
+        email: Yup.string().email("Invalid email").required("Required"),
+        cardNumber: Yup.string().matches(/^[0-9]+$/, "Must be only digits").min(16, "Too short").max(16, "Too long")
+    });
 
     return (
         <Formik
             initialValues={{
-                name: "",
+                firstName: "",
+                lastName: "",
                 email: "",
                 cardNumber: "",
             }}
             onSubmit={(data) => onSubmitfn(data)}
-            validate={(values) => checkValues(values)}
+            validationSchema={inputValidation}
         >
-            {() => (
+            {({ errors, touched }) => (
                 <div className="loginForm">
                     <Form className="loginForm__form">
                         <div className="loginForm__field">
                             <Field
-                                name="name"
+                                name="firstName"
                                 type="input"
-                                labelName="Full name"
-                                placeholder="Inser full name here"
+                                labelName="First name"
+                                placeholder="John"
                                 as={FormField}
                             />
+                            {errors.firstName && touched.firstName ? (
+                                <div>{errors.firstName}</div>
+                            ) : null}
+                        </div>
+
+                        <div className="loginForm__field">
+                            <Field
+                                name="lastName"
+                                type="input"
+                                labelName="Last name"
+                                placeholder="Brown"
+                                as={FormField}
+                            />
+                            {errors.lastName && touched.lastName ? (
+                                <div>{errors.lastName}</div>
+                            ) : null}
                         </div>
 
                         <div className="loginForm__field">
@@ -46,9 +87,12 @@ function Login() {
                                 name="email"
                                 type="input"
                                 labelName="e-mail"
-                                placeholder="Insert e-mail here"
+                                placeholder="john.brown@gmail.com"
                                 as={FormField}
                             />
+                            {errors.email && touched.email ? (
+                                <div>{errors.email}</div>
+                            ) : null}
                         </div>
 
                         <div className="loginForm__field">
@@ -56,12 +100,17 @@ function Login() {
                                 name="cardNumber"
                                 type="input"
                                 labelName="Card number"
-                                placeholder="Insert card number here"
+                                placeholder="123# #### #### ####"
                                 as={FormField}
                             />
+                            {errors.cardNumber && touched.cardNumber ? (
+                                <div>{errors.cardNumber}</div>
+                            ) : null}
                         </div>
-
-                        <Button type="submit">Submit</Button>
+                        <div className="loginForm__buttons">
+                            <Button type="submit">Submit</Button>
+                            <Button onClick={logoutHandler}>Logout</Button>
+                        </div>
                     </Form>
                 </div>
             )}
