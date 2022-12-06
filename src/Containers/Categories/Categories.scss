@@ -1,12 +1,11 @@
 .categories {
     display: flex;
     justify-content: flex-start;
-    margin-top: 30px;
     font-size: 20px;
     flex-direction: column;
 
     &__title {
-        padding: 0px 30px;
+        padding: 30px;
     }
 
     &__items {

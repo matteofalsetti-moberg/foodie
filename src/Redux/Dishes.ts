@@ -39,9 +39,13 @@ export const dishesSlice = createSlice({
                 state.totalPrice -= action.payload.price * action.payload.count;
             }
         },
+        removeAllDishes: (state) => {
+            state.items = initialState;
+            state.totalPrice = 0;
+        }
     },
 });
 
-export const { insertDish, removeDish } = dishesSlice.actions;
+export const { insertDish, removeDish, removeAllDishes} = dishesSlice.actions;
 
 export default dishesSlice.reducer;

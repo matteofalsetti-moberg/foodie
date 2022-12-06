@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../Redux/Categories";
 import Item from "../../components/Item/Item";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Redux/Store";
 
 export interface ICategoryItemProp {
     image: string;
@@ -8,10 +10,15 @@ export interface ICategoryItemProp {
 }
 
 function CategoryItem({ image, name }: ICategoryItemProp) {
+    const currentCategory = useSelector(
+        (state: RootState) => state.categories.item.category
+    );
     const dispatch = useDispatch();
 
     function sendCategories() {
-        dispatch(setCategory({ category: name, display: true }));
+        currentCategory == name
+            ? dispatch(setCategory({ category: "", display: false }))
+            : dispatch(setCategory({ category: name, display: true }));
     }
 
     return (

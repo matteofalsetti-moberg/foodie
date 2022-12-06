@@ -7,6 +7,8 @@ import { useDispatch } from "react-redux";
 import { login, logout } from "../../Redux/User";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
+import { removeAllDishes } from "../../Redux/Dishes";
+import { resetCategory } from "../../Redux/Categories";
 
 interface ILogin {
     firstName: string;
@@ -21,12 +23,15 @@ function Login() {
 
     function onSubmitfn(data: ILogin) {
         dispatch(login(data));
+        dispatch(removeAllDishes())
+        dispatch(resetCategory())
         navigate("/");
     }
 
     function logoutHandler() {
         dispatch(logout());
-      // navigate("/");
+        dispatch(removeAllDishes());
+
     }
 
     const inputValidation = Yup.object().shape({
@@ -39,7 +44,10 @@ function Login() {
             .max(50, "Too Long!")
             .required("Required"),
         email: Yup.string().email("Invalid email").required("Required"),
-        cardNumber: Yup.string().matches(/^[0-9]+$/, "Must be only digits").min(16, "Too short").max(16, "Too long")
+        cardNumber: Yup.string()
+            .matches(/^[0-9]+$/, "Must be only digits")
+            .min(16, "Too short")
+            .max(16, "Too long"),
     });
 
     return (
@@ -65,7 +73,9 @@ function Login() {
                                 as={FormField}
                             />
                             {errors.firstName && touched.firstName ? (
-                                <div>{errors.firstName}</div>
+                                <div className="loginForm__error">
+                                    {errors.firstName}
+                                </div>
                             ) : null}
                         </div>
 
@@ -78,7 +88,9 @@ function Login() {
                                 as={FormField}
                             />
                             {errors.lastName && touched.lastName ? (
-                                <div>{errors.lastName}</div>
+                                <div className="loginForm__error">
+                                    {errors.lastName}
+                                </div>
                             ) : null}
                         </div>
 
@@ -91,7 +103,9 @@ function Login() {
                                 as={FormField}
                             />
                             {errors.email && touched.email ? (
-                                <div>{errors.email}</div>
+                                <div className="loginForm__error">
+                                    {errors.email}
+                                </div>
                             ) : null}
                         </div>
 
@@ -104,7 +118,9 @@ function Login() {
                                 as={FormField}
                             />
                             {errors.cardNumber && touched.cardNumber ? (
-                                <div>{errors.cardNumber}</div>
+                                <div className="loginForm__error">
+                                    {errors.cardNumber}
+                                </div>
                             ) : null}
                         </div>
                         <div className="loginForm__buttons">
@@ -119,3 +135,4 @@ function Login() {
 }
 
 export default Login;
+

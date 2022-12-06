@@ -23,8 +23,8 @@ function Dish({ image, name }: IDishProp) {
         <div className="dishes">
             <Item name={truncatedName} image={image} />
             <div className="dishes__footer">
-                <Button onClick={addToCart} text="ADD TO CART" />
-                <div>{`${realPrice} €`}</div>
+                <Button onClick={addToCart} text="ADD" />
+                <div>{realPrice +"€" }</div>
             </div>
         </div>
     );

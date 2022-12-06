@@ -1,12 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface ICategory {
-    category?: string;
-    area?: string
+    category: string;
     display: boolean;
 }
 
-const initialState: ICategory = { category: "",area: "", display: false };
+const initialState: ICategory = { category: "", display: false };
 
 export const categoriesSlice = createSlice({
     name: "categories",
@@ -16,13 +15,12 @@ export const categoriesSlice = createSlice({
             state.item.category = action.payload.category;
             state.item.display = action.payload.display;
         },
-        setArea: (state, action: PayloadAction<ICategory>) => {
-            state.item.area = action.payload.area;
-            state.item.display = action.payload.display;
-        },
+        resetCategory: (state)=>{
+            state.item = initialState;
+        }
     },
 });
 
-export const { setCategory, setArea } = categoriesSlice.actions;
+export const { setCategory,resetCategory } = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;
