@@ -22,14 +22,14 @@ function Login() {
 
     function onSubmitfn(data: ILogin) {
         dispatch(login(data));
-        dispatch(removeAllDishes())
-        navigate("/");
+        dispatch(removeAllDishes());
+        navigate(`/home/welcome/${data.firstName}`);
     }
 
     function logoutHandler() {
         dispatch(logout());
         dispatch(removeAllDishes());
-
+        navigate("/home")
     }
 
     const inputValidation = Yup.object().shape({
@@ -76,7 +76,6 @@ function Login() {
                                 </div>
                             ) : null}
                         </div>
-
                         <div className="loginForm__field">
                             <Field
                                 name="lastName"
@@ -91,7 +90,6 @@ function Login() {
                                 </div>
                             ) : null}
                         </div>
-
                         <div className="loginForm__field">
                             <Field
                                 name="email"
@@ -106,7 +104,6 @@ function Login() {
                                 </div>
                             ) : null}
                         </div>
-
                         <div className="loginForm__field">
                             <Field
                                 name="cardNumber"
@@ -121,9 +118,14 @@ function Login() {
                                 </div>
                             ) : null}
                         </div>
+
                         <div className="loginForm__buttons">
                             <Button type="submit" text="Submit" />
-                            <Button text="Logout" type="button" onClick={logoutHandler} />
+                            <Button
+                                text="Logout"
+                                type="button"
+                                onClick={logoutHandler}
+                            />
                         </div>
                     </Form>
                 </div>
@@ -133,4 +135,3 @@ function Login() {
 }
 
 export default Login;
-

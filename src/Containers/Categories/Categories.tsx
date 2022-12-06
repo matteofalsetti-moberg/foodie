@@ -39,7 +39,7 @@ function Categories() {
                             return (
                                 <Card key={item.name}>
                                     <CategoryItem
-                                    onClick={() => navigate(`/${item.name}`)}
+                                    onClick={() => navigate(`/home/${item.name}`)}
                                         name={item.name}
                                         image={item.image}
                                     />

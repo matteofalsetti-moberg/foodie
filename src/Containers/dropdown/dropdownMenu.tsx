@@ -6,7 +6,7 @@ import "./dropdownMenu.scss";
 function DropdownMenu() {
     return (
         <DropdownButton variant="dropMenu" title="Menu">
-            <Dropdown.Item as={Link} className="dropMenu__link" to="/">
+            <Dropdown.Item as={Link} className="dropMenu__link" to="/home">
                 Catagories
             </Dropdown.Item>
             <Dropdown.Item
@@ -19,7 +19,7 @@ function DropdownMenu() {
             <Dropdown.Item
                 as={Link}
                 className="dropMenu__link"
-                to="/randomMeal"
+                to="/login"
             >
                 Login
             </Dropdown.Item>
