@@ -12,7 +12,7 @@ export interface IDishProp {
 function Dish({ image, name }: IDishProp) {
     const dispatch = useDispatch();
     const realPrice = name.length;
-    const truncatedName = name.length > 15 ? name.substring(0,15).concat("...") : name;
+    const truncatedName = name.length > 30 ? name.substring(0,30).concat("...") : name;
 
 
     function addToCart() {

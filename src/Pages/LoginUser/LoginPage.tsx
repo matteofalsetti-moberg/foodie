@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, Formik, Form } from "formik";
 import "./LoginPage.scss";
-import { Button } from "react-bootstrap";
+import Button from "../../components/Button/Button";
 import FormField from "../../components/FormField/FormField";
 import { useDispatch } from "react-redux";
 import { login, logout } from "../../Redux/User";
@@ -124,8 +124,8 @@ function Login() {
                             ) : null}
                         </div>
                         <div className="loginForm__buttons">
-                            <Button type="submit">Submit</Button>
-                            <Button onClick={logoutHandler}>Logout</Button>
+                            <Button type="submit" text="Submit" />
+                            <Button text="Logout" type="button" onClick={logoutHandler} />
                         </div>
                     </Form>
                 </div>

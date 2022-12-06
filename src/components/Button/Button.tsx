@@ -11,7 +11,7 @@ function Button({ icon, text, type, onClick }: IButtonPorps) {
     return (
         <button type={type} onClick={onClick} className="button">
             {icon && <img className="button__image" src={icon} />}
-            {text && <div>{text}</div>}
+            {text && <h1 className="button__text">{text}</h1>}
         </button>
     );
 }
