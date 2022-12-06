@@ -7,18 +7,18 @@ import DishesList from "./Containers/DishesList/DishesList";
 import Welcome from "./Containers/Welcome/Welcome";
 
 function App() {
-    return (
+    return (  //mogu li imati dvije rute tipa home/:category i home/:name da su nested?
         <div className="App">
             <Header />
             <Routes>
             <Route path="" element={<CategoriesPage /> } />
                 <Route path="home" element={<CategoriesPage /> } >
-                    <Route path=":category" element={<DishesList />} />
-                    <Route path="welcome/:name" element={<Welcome />} />
+                    <Route path=":category" element={<DishesList />} /> 
+                    <Route path="welcome" element={<Welcome />} />
                     
                 </Route>
-                <Route path="/randomMeal" element={<RandomMeal />} />
-                <Route path="/login" element={<LoginPage />} />
+                <Route path="randomMeal" element={<RandomMeal />} />
+                <Route path="login" element={<LoginPage />} />
             </Routes>
         </div>
     );

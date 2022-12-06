@@ -23,7 +23,7 @@ function Login() {
     function onSubmitfn(data: ILogin) {
         dispatch(login(data));
         dispatch(removeAllDishes());
-        navigate(`/home/welcome/${data.firstName}`);
+        navigate(`/home/welcome`);
     }
 
     function logoutHandler() {
