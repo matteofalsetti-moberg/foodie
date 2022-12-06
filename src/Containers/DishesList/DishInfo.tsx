@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Card from "../../components/Card/Card";
 import Item from "../../components/Item/Item";
+import "./DishInfo.scss"
 
 function DishInfo() {
     const { id } = useParams();
@@ -18,7 +20,13 @@ function DishInfo() {
         fetchDishInfo();
     }, []);
 
-    return  <Item image={dish.strMealThumb} name={dish.strMeal} />;
+    return (
+        <div className="dishInfo">
+        <Card>
+            <Item image={dish.strMealThumb} name={dish.strMeal} />
+        </Card>
+        </div>
+    );
 }
 
 export default DishInfo;
