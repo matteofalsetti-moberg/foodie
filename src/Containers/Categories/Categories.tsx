@@ -2,15 +2,13 @@ import Card from "../../components/Card/Card";
 import CategoryItem from "./CategoryItem";
 import "./Categories.scss";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../Redux/Store";
+import { useNavigate } from "react-router-dom";
 
 
 function Categories() {
     const [categories, setCategories] = useState([{ name: "", image: "" }]);
-    const currentCategory = useSelector(
-        (state: RootState) => state.categories.item
-    );
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchCategories() {
@@ -33,7 +31,7 @@ function Categories() {
 
     return (
         <div className="categories">
-            {!!currentCategory && (
+            {
                 <>
                     <h1 className="categories__title">Categories</h1>
                     <div className="categories__items">
@@ -41,6 +39,7 @@ function Categories() {
                             return (
                                 <Card key={item.name}>
                                     <CategoryItem
+                                    onClick={() => navigate(`/${item.name}`)}
                                         name={item.name}
                                         image={item.image}
                                     />
@@ -49,7 +48,7 @@ function Categories() {
                         })}
                     </div>
                 </>
-            )}
+            }
         </div>
     );
 }

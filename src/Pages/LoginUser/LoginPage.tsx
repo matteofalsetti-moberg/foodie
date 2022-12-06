@@ -8,7 +8,6 @@ import { login, logout } from "../../Redux/User";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { removeAllDishes } from "../../Redux/Dishes";
-import { resetCategory } from "../../Redux/Categories";
 
 interface ILogin {
     firstName: string;
@@ -24,7 +23,6 @@ function Login() {
     function onSubmitfn(data: ILogin) {
         dispatch(login(data));
         dispatch(removeAllDishes())
-        dispatch(resetCategory())
         navigate("/");
     }
 
