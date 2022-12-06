@@ -4,7 +4,7 @@ export interface IButtonPorps {
     icon?: string;
     text?: string;
     type?: "button" | "submit" | "reset";
-    onClick?: any;
+    onClick?: ()=> any;
 }
 
 function Button({ icon, text, type, onClick }: IButtonPorps) {

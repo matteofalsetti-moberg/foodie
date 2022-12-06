@@ -5,17 +5,19 @@ import RandomMeal from "./Pages/RandomMeal/RandomMeal";
 import LoginPage from "./Pages/LoginUser/LoginPage";
 import DishesList from "./Containers/DishesList/DishesList";
 import Welcome from "./Containers/Welcome/Welcome";
+import DishInfo from "./Containers/DishesList/DishInfo";
 
 function App() {
-    return (  //mogu li imati dvije rute tipa home/:category i home/:name da su nested?
+    return (
+        //mogu li imati dvije rute tipa home/:category i home/:name da su nested?
         <div className="App">
             <Header />
             <Routes>
-            <Route path="" element={<CategoriesPage /> } />
-                <Route path="home" element={<CategoriesPage /> } >
-                    <Route path=":category" element={<DishesList />} /> 
+                <Route path="" element={<CategoriesPage />} />
+                <Route path="home" element={<CategoriesPage />}>
+                    <Route path=":category" element={<DishesList />} />
                     <Route path="welcome" element={<Welcome />} />
-                    
+                    <Route path="dish/:id" element={<DishInfo />} />
                 </Route>
                 <Route path="randomMeal" element={<RandomMeal />} />
                 <Route path="login" element={<LoginPage />} />
