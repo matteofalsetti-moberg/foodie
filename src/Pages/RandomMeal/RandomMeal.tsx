@@ -5,6 +5,7 @@ import "./RandomMeal.scss"
 
 function RandomMeal() {
     const [randomDish, setRandomDish] = useState({
+        id: "",
         name: "TEST",
         image: "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
     });
@@ -16,6 +17,7 @@ function RandomMeal() {
             );
             const data = await response.json();
             const fetchedDishes = {
+                id: data.meals[0].strId,
                 name: data.meals[0].strMeal,
                 image: data.meals[0].strMealThumb,
             };
@@ -26,7 +28,7 @@ function RandomMeal() {
 
     return (<div className="randomMeal">
         <Card>
-            <Dish name={randomDish.name} image={randomDish.image} />
+            <Dish  id={randomDish.id} name={randomDish.name} image={randomDish.image} />
         </Card>
         </div>
     );

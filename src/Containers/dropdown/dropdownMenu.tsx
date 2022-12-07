@@ -9,7 +9,7 @@ function DropdownMenu() {
     return (
         <DropdownButton variant="dropMenu" title="Menu">
             <Dropdown.Item as={Link} className="dropMenu__link" to="/home">
-                {t("Catagories")}
+                {t("Categories")}
             </Dropdown.Item>
             <Dropdown.Item
                 as={Link}

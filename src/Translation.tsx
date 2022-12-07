@@ -34,6 +34,8 @@ const translationEn = {
     Login: "Login",
     CLOSE: "CLOSE",
     theCartIsEmpty: "The cart is empty! Try to select some dishes",
+    Logout: "Logout",
+    moreAbout: "More about"
 }
 const translationHr = {
     Categories: "Kategorije",
@@ -45,10 +47,10 @@ const translationHr = {
     Pasta: "Tjestenina",
     Pork: "Svinjetina",
     Seafood: "Plodovi mora",
-    Side: "Side",
-    Starter: "Starter",
+    Side: "Prilozi",
+    Starter: "Predjelo",
     Vegan: "Vegan",
-    Vegetarian: "Vegetarian",
+    Vegetarian: "Vegetarijansko",
     Breakfast: "Doručak",
     Goat: "Kozje meso",
     ADD: "DODAJ",
@@ -69,6 +71,8 @@ const translationHr = {
     Login: "Prijava",
     CLOSE: "ZATVORI",
     theCartIsEmpty: "Košarica je prazna! Odaberite prije neka jela",
+    Logout: "Odjava",
+    moreAbout: "Saznaj više"
 
 }
 

@@ -2,17 +2,15 @@ import Card from "../../components/Card/Card";
 import Dish from "./Dish";
 import "./DishesList.scss";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function DishesList() {
     const {t} = useTranslation();
-    const navigate = useNavigate();
+
     const { category } = useParams();
     const [dishes, setDishes] = useState([{id:"", name: "", image: "" }]);
-    function displayMoreInfo(id: string){
-        navigate(`/home/dish/${id}`)
-    }
+
 
     useEffect(() => {
         async function fetchDishes() {
@@ -40,8 +38,8 @@ function DishesList() {
                 {category &&
                     dishes.map((item) => {
                         return (
-                            <Card key={item.name} onClick={() => displayMoreInfo(item.id)} >
-                                <Dish name={item.name} image={item.image} />
+                            <Card key={item.name} >
+                                <Dish id={item.id} name={item.name} image={item.image} />
                             </Card>
                         );
                     })}

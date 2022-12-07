@@ -3,10 +3,8 @@
     border-radius: 25px;
     border: 2px solid rgb(233, 158, 47);
     background-color: white;
-    padding: 6px;
-    width: 150px;
 
-    &:hover{
-        cursor: pointer;
-    }
+
+    display: flex;
+    align-items: center;
 }
