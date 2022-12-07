@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Card from "../../components/Card/Card";
-import Item from "../../components/Item/Item";
-import "./DishInfo.scss"
+import { useNavigate, useParams } from "react-router-dom";
+import DishSpects from "./DishSpects";
+import "./DishInfo.scss";
+import Button from "../../components/Button/Button";
 
 function DishInfo() {
     const { id } = useParams();
-    const [dish, setDish] = useState({ strMealThumb: "", strMeal: "" });
+    const [dish, setDish] = useState({
+        strMealThumb: "",
+        strMeal: "",
+        strCategory: "",
+        strArea: "",
+        strTags: "",
+    });
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchDishInfo() {
@@ -22,9 +29,20 @@ function DishInfo() {
 
     return (
         <div className="dishInfo">
-        <Card>
-            <Item image={dish.strMealThumb} name={dish.strMeal} />
-        </Card>
+            <div className="dishInfo__card">
+                <img
+                    className="dishInfo__img"
+                    src={dish.strMealThumb}
+                    alt="Image not found"
+                />
+                <div>
+                <DishSpects spectCategory="Name" spectValue={dish.strMeal} />
+                <DishSpects spectCategory="Category" spectValue={dish.strCategory} />
+                <DishSpects spectCategory="Region" spectValue={dish.strArea} />
+                <DishSpects spectCategory="Tag" spectValue={dish.strTags} />
+                </div>
+                <Button text="Return to the list" onClick={() => navigate(`/home/${dish.strCategory}`)} />
+            </div>
         </div>
     );
 }
