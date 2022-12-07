@@ -39,7 +39,9 @@ function DishesList() {
                     dishes.map((item) => {
                         return (
                             <Card key={item.name} >
+                                <div className="disheslist__card">
                                 <Dish id={item.id} name={item.name} image={item.image} />
+                                </div>
                             </Card>
                         );
                     })}

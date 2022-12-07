@@ -18,7 +18,7 @@ function Dish({ id, image, name }: IDishProp) {
     const dispatch = useDispatch();
     const realPrice = name.length;
     const truncatedName =
-        name.length > 25 ? name.substring(0, 25).concat("...") : name;
+        name.length > 35 ? name.substring(0, 35).concat("...") : name;
 
     function addToCart() {
         dispatch(insertDish({ name, image, count: 1, price: realPrice }));
