@@ -8,6 +8,7 @@ import { login, logout } from "../../Redux/User";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { removeAllDishes } from "../../Redux/Dishes";
+import { useTranslation } from "react-i18next";
 
 interface ILogin {
     firstName: string;
@@ -17,6 +18,7 @@ interface ILogin {
 }
 
 function Login() {
+    const {t} = useTranslation()
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -66,7 +68,7 @@ function Login() {
                             <Field
                                 name="firstName"
                                 type="input"
-                                labelName="First name"
+                                labelName={t("firstName")}
                                 placeholder="John"
                                 as={FormField}
                             />
@@ -80,7 +82,7 @@ function Login() {
                             <Field
                                 name="lastName"
                                 type="input"
-                                labelName="Last name"
+                                labelName={t("lastName")}
                                 placeholder="Brown"
                                 as={FormField}
                             />
@@ -108,7 +110,7 @@ function Login() {
                             <Field
                                 name="cardNumber"
                                 type="input"
-                                labelName="Card number"
+                                labelName={t("cardNumber")}
                                 placeholder="123# #### #### ####"
                                 as={FormField}
                             />

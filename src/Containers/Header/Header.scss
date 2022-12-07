@@ -4,15 +4,17 @@
     gap: 10px;
     height: 80px;
     padding: 0px 10px;
-    align-items: center; 
+    align-items: center;
     background-color: rgb(233, 158, 47);
 
     &__input {
-        width: 65%;
+        width: 60%;
         height: 35px;
     }
     &__buttons {
+        display: flex;
+        gap: 20px;
         width: 50px;
+        align-items: center;
     }
-
 }

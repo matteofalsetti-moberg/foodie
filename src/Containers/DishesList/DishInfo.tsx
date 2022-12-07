@@ -3,8 +3,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import DishSpects from "./DishSpects";
 import "./DishInfo.scss";
 import Button from "../../components/Button/Button";
+import { useTranslation } from "react-i18next";
 
 function DishInfo() {
+    const {t} = useTranslation();
     const { id } = useParams();
     const [dish, setDish] = useState({
         strMealThumb: "",
@@ -16,6 +18,7 @@ function DishInfo() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        
         async function fetchDishInfo() {
             const response = await fetch(
                 `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
@@ -36,12 +39,12 @@ function DishInfo() {
                     alt="Image not found"
                 />
                 <div>
-                <DishSpects spectCategory="Name" spectValue={dish.strMeal} />
-                <DishSpects spectCategory="Category" spectValue={dish.strCategory} />
-                <DishSpects spectCategory="Region" spectValue={dish.strArea} />
-                <DishSpects spectCategory="Tag" spectValue={dish.strTags} />
+                <DishSpects spectCategory={t("Name")} spectValue={dish.strMeal} />
+                <DishSpects spectCategory={t("Category")} spectValue={dish.strCategory} />
+                <DishSpects spectCategory={t("Region")} spectValue={dish.strArea} />
+                <DishSpects spectCategory={t("Tag")} spectValue={dish.strTags} />
                 </div>
-                <Button text="Return to the list" onClick={() => navigate(`/home/${dish.strCategory}`)} />
+                <Button text={"return"} onClick={() => navigate(`/home/${dish.strCategory}`)} />
             </div>
         </div>
     );

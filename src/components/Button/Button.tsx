@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./button.scss";
 
 export interface IButtonPorps {
@@ -8,10 +9,11 @@ export interface IButtonPorps {
 }
 
 function Button({ icon, text, type, onClick }: IButtonPorps) {
+    const {t} = useTranslation();
     return (
         <button type={type} onClick={onClick} className="button">
             {icon && <img className="button__image" src={icon} />}
-            {text && <h1 className="button__text">{text}</h1>}
+            {text && <h1 className="button__text">{t(text)}</h1>}
         </button>
     );
 }

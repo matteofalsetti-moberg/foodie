@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import "./Item.scss";
 export interface IDishItem {
     image: string;
@@ -5,10 +6,11 @@ export interface IDishItem {
 }
 
 function Item({ image, name }: IDishItem) {
+    const {t} = useTranslation()
     return (
         <div className="item">
             <img className="item__image" src={image} alt="Image not found" />
-            <div >{name}</div>
+            <div>{t(name)}</div>
         </div>
     );
 }

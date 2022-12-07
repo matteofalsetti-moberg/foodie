@@ -3,6 +3,7 @@ import { insertDish } from "../../Redux/Dishes";
 import Button from "../../components/Button/Button";
 import Item from "../../components/Item/Item";
 import "./Dish.scss";
+import { useTranslation } from "react-i18next";
 
 export interface IDishProp {
     image: string;
@@ -10,10 +11,11 @@ export interface IDishProp {
 }
 
 function Dish({ image, name }: IDishProp) {
+    const { t } = useTranslation();
     const dispatch = useDispatch();
     const realPrice = name.length;
-    const truncatedName = name.length > 30 ? name.substring(0,30).concat("...") : name;
-
+    const truncatedName =
+        name.length > 30 ? name.substring(0, 30).concat("...") : name;
 
     function addToCart() {
         dispatch(insertDish({ name, image, count: 1, price: realPrice }));
@@ -23,8 +25,8 @@ function Dish({ image, name }: IDishProp) {
         <div className="dishes">
             <Item name={truncatedName} image={image} />
             <div className="dishes__footer">
-                <Button onClick={addToCart} text="ADD" />
-                <div>{realPrice +"€" }</div>
+                <Button onClick={addToCart} text={`${t("ADD")}`} />
+                <div>{realPrice + "€"}</div>
             </div>
         </div>
     );

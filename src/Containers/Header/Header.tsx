@@ -7,9 +7,12 @@ import ModalCart from "../Modal/ModalCart";
 import DropdownMenu from "../dropdown/dropdownMenu";
 
 import cartIcon from "../../assets/cart.png";
+import eng from "../../assets/englandFlag.png";
+import cro from "../../assets/croatianFlag.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
 import DisplayUser from "../DisplayUser/DisplayUser";
+import DropdownLang from "../dropdown/dropdownLang";
 
 function Header() {
     const [displayModal, setDisplayModal] = useState(false);
@@ -35,6 +38,7 @@ function Header() {
             <DisplayUser />
             <div className="header__buttons">
                 <Button onClick={seeCart} icon={cartIcon} />
+                <DropdownLang />
             </div>
         </div>
     );

@@ -3,8 +3,10 @@ import Dish from "./Dish";
 import "./DishesList.scss";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function DishesList() {
+    const {t} = useTranslation();
     const navigate = useNavigate();
     const { category } = useParams();
     const [dishes, setDishes] = useState([{id:"", name: "", image: "" }]);
@@ -33,7 +35,7 @@ function DishesList() {
 
     return (
         <div className="disheslist">
-            <h1 className="disheslist__title">{category}</h1>
+            <h1 className="disheslist__title">{t(category!)}</h1>
             <div className="disheslist__list">
                 {category &&
                     dishes.map((item) => {

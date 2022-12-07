@@ -3,9 +3,12 @@ import CategoryItem from "./CategoryItem";
 import "./Categories.scss";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 
 
 function Categories() {
+    const {t } = useTranslation();
     const [categories, setCategories] = useState([{ name: "", image: "" }]);
 
     const navigate = useNavigate();
@@ -33,7 +36,7 @@ function Categories() {
         <div className="categories">
             {
                 <>
-                    <h1 className="categories__title">Categories</h1>
+                    <h1 className="categories__title">{t("Categories")}</h1>
                     <div className="categories__items">
                         {categories.map((item) => {
                             return (
