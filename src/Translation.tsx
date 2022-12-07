@@ -29,6 +29,11 @@ const translationEn = {
     cardNumber: "Credit card Number",
     Submit: "Submit",
     Cart: "Cart",
+    Lang: "Lang",
+    RandomMeal: "Random meal",
+    Login: "Login",
+    CLOSE: "CLOSE",
+    theCartIsEmpty: "The cart is empty! Try to select some dishes",
 }
 const translationHr = {
     Categories: "Kategorije",
@@ -59,6 +64,12 @@ const translationHr = {
     cardNumber: "Broj kreditne kartice",
     Submit: "Pošalji",
     Cart: "Košara",
+    Lang: "Jezik",
+    RandomMeal: "Nasumični obrok",
+    Login: "Prijava",
+    CLOSE: "ZATVORI",
+    theCartIsEmpty: "Košarica je prazna! Odaberite prije neka jela",
+
 }
 
 i18next.use(initReactI18next).init({

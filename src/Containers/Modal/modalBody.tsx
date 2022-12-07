@@ -6,8 +6,10 @@ import { insertDish, removeDish } from "../../Redux/Dishes";
 import Button from "../../components/Button/Button";
 import plus from "../../assets/plus.png";
 import minus from "../../assets/minus.png";
+import { useTranslation } from "react-i18next";
 
 function ModalBody() {
+    const {t} = useTranslation()
     const dishList = useSelector((state: RootState) => state.dishes.items);
     const dispatch = useDispatch();
 
@@ -54,7 +56,7 @@ function ModalBody() {
                     </div>
                 ))
             ) : (
-                <div>The cart is empty! Try to select some dishes</div>
+                <div>{t("theCartIsEmpty")}</div>
             )}
         </div>
     );
